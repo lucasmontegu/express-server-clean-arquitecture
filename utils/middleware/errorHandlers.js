@@ -10,7 +10,8 @@ function withErrorStack(error, stack) {
 }
 
 function logErrors(err, req, res, next) {
-    console.log(err);
+    const debug = require('debug')('app:error');
+    debug(err);
     next(err);
 }
 
